@@ -1,0 +1,326 @@
+/* =======================
+   GLOBAL STYLES
+======================= */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar {
+  background: transparent !important;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar-brand {
+  color: #e50914 !important;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.btn-danger {
+  background-color: #e50914;
+  border: none;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 4px;
+}
+
+.btn-danger:hover {
+  background-color: #f6121d;
+}
+
+/* =======================
+   HERO / BANNER
+======================= */
+section {
+  background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.9),
+      rgba(0,0,0,0.4)
+    ),
+    url('assets/WhatsApp\ Image\ 2026-04-12\ at\ 12.09.22\ PM.jpeg') ; /* 🔥 banner image */
+  
+  background-size: cover;
+  background-position: center;
+  height: 91vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section h1 {
+  color: #e50914;
+  font-weight: 900;
+  text-shadow: 0 0 20px rgba(229,9,20,0.7);
+}
+
+section p {
+  color: #fff;
+  font-size: 20px;
+}
+
+/* =======================
+   SECTION HEADINGS
+======================= */
+h3 {
+  margin-left: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+/* =======================
+   MOVIE CARDS
+======================= */
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Zoom Effect */
+.movie-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.movie-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Title Style */
+.overlay h6 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* =======================
+   CARD HOVER POP EFFECT
+======================= */
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 5;
+}
+
+/* =======================
+   GRID SPACING
+======================= */
+.row {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer {
+  background-color: #000;
+  color: #999;
+  padding: 50px 20px;
+}
+
+.footer .contact {
+  margin-bottom: 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-container ul li {
+  margin-bottom: 10px;
+}
+
+.footer-container ul li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-container ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-bottom select {
+  background: #000;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 5px;
+  width: 120px;
+}
+/* BUTTON */
+.signin-btn {
+  background: #e50914;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* MODAL BACKDROP */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+}
+
+/* MODAL BOX */
+.modal-box {
+  width: 380px;
+  padding: 50px 40px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 8px;
+  position: relative;
+  animation: zoomIn 0.3s ease;
+}
+
+/* ANIMATION */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* TITLE */
+.title {
+  color: white;
+  margin-bottom: 25px;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* INPUT STYLE */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 10px;
+  background: #333;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.input-box label {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+  top: -8px;
+  font-size: 12px;
+  color: #e50914;
+}
+
+/* BUTTON */
+.main-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* SWITCH TEXT */
+.switch-text {
+  margin-top: 20px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.switch-text span {
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* FORM CONTROL */
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  section h1 {
+    font-size: 28px;
+  }
+
+  .movie-card img {
+    height: 180px;
+  }
+}
